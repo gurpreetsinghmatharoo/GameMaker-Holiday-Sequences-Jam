@@ -1,4 +1,7 @@
 /// @description 
+// Movement multiplier
+var _moveMul = 1;
+
 // Gravity
 if (moveY < 20) moveY += gravSpeed;
 
@@ -26,13 +29,17 @@ switch (state) {
 		}
 		
 		// Attack
-		if (inputAttack) {
+		if (inputAttack && attackCooldown <= 0) {
 			state_set(STATE.ATTACK);
+			
+			attackCooldown = attackTime;
 		}
+		
+		attackCooldown -= attackCooldown > 0;
 	break;
 	
 	case STATE.ATTACK:
-		
+		_moveMul = 0.2;
 	break;
 }
 
@@ -44,29 +51,34 @@ if (_maxTime > 0 && stateTime >= _maxTime) {
 }
 
 // Collisions
-if (collision(x + moveX, y, floorY)) {
-	repeat (abs(moveX)) {
-		if (collision(x + sign(moveX), y, floorY)) {
+var _moveX = moveX * _moveMul;
+var _moveY = moveY * _moveMul;
+
+if (collision(x + _moveX, y, floorY)) {
+	repeat (abs(_moveX)) {
+		if (collision(x + sign(_moveX), y, floorY)) {
 			break;
 		}
-		x += sign(moveX);
+		x += sign(_moveX);
 	}
+	_moveX = 0;
 	moveX = 0;
 }
 
-if (collision(x, y + moveY, floorY)) {
-	repeat (abs(moveY)) {
-		if (collision(x, y + sign(moveY), floorY)) {
+if (collision(x, y + _moveY, floorY)) {
+	repeat (abs(_moveY)) {
+		if (collision(x, y + sign(_moveY), floorY)) {
 			break;
 		}
-		y += sign(moveY);
+		y += sign(_moveY);
 	}
+	_moveY = 0;
 	moveY = 0;
 }
 
 // Movement
-x += moveX;
-y += moveY;
+x += _moveX;
+y += _moveY;
 
 // Sprite
 sprite_index = stateData[state].sprite;

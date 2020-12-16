@@ -14,20 +14,24 @@ stateData = array_create(STATE._LENGTH);
 stateData[STATE.IDLE] = new StateData(sPlayerIdle, -1);
 stateData[STATE.RUN] = new StateData(sPlayerRun, -1);
 stateData[STATE.JUMP] = new StateData(sPlayerJump, -1);
-stateData[STATE.ATTACK] = new StateData(sPlayerAttack, 20);
+stateData[STATE.ATTACK] = new StateData(sPlayerAttack, 10);
+
+// Attack
+attackTime = 20;
+attackCooldown = 0;
 
 // Movement
 moveX = 0;
 moveY = 0;
-moveSpeed = 8;
+moveSpeed = 10;
 moveSmooth = 4;
 
 inputX = 0;
 inputJump = 0;
 inputAttack = 0;
 
-jumpSpeed = 20;
-gravSpeed = 1;
+jumpSpeed = 18;
+gravSpeed = 0.7;
 
 grounded = false;
 
