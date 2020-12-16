@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"id":{"name":"sFloorMask","path":"sprites/sFloorMask/sFloorMask.yy",},"order":0,},
     {"id":{"name":"sFloorBack","path":"sprites/sFloorBack/sFloorBack.yy",},"order":0,},
     {"id":{"name":"sPlayerRun","path":"sprites/sPlayerRun/sPlayerRun.yy",},"order":1,},
     {"id":{"name":"sPlayerAttack","path":"sprites/sPlayerAttack/sPlayerAttack.yy",},"order":3,},
@@ -8,6 +9,7 @@
     {"id":{"name":"sFloorStripe","path":"sprites/sFloorStripe/sFloorStripe.yy",},"order":1,},
     {"id":{"name":"SeqFloorAnim","path":"sequences/SeqFloorAnim/SeqFloorAnim.yy",},"order":1,},
     {"id":{"name":"SeqFloorProjection","path":"sequences/SeqFloorProjection/SeqFloorProjection.yy",},"order":0,},
+    {"id":{"name":"sFloorDarkOverlay","path":"sprites/sFloorDarkOverlay/sFloorDarkOverlay.yy",},"order":1,},
     {"id":{"name":"PlayerStates","path":"scripts/PlayerStates/PlayerStates.yy",},"order":1,},
     {"id":{"name":"Collisions","path":"scripts/Collisions/Collisions.yy",},"order":0,},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"order":0,},
@@ -50,6 +52,7 @@
     {"folderPath":"folders/Notes.yy","order":13,"resourceVersion":"1.0","name":"Notes","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Extensions.yy","order":14,"resourceVersion":"1.0","name":"Extensions","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/World.yy","order":4,"resourceVersion":"1.0","name":"World","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sprites/World/Masks.yy","order":2,"resourceVersion":"1.0","name":"Masks","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":461609314234257646,"resourceVersion":"1.0","name":"audiogroup_default","resourceType":"GMAudioGroup",},
